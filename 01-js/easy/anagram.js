@@ -5,7 +5,13 @@
 */
 
 function isAnagram(str1, str2) {
-
+  return testAnagram(str1) === testAnagram(str2);
 }
+
+function testAnagram(str) {
+  return str.trim().toLocaleLowerCase().split("").sort().join();
+}
+
+isAnagram("Debit Card", "Bad Credit");
 
 module.exports = isAnagram;
