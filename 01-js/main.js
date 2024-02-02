@@ -1,6 +1,10 @@
 let a = 1;
 //console.log(a);
 
+let str = " Test"
+
+str.toLocaleLowerCase
+
 var b = 6;
 //console.log(b);
 
@@ -63,4 +67,32 @@ const consoleWatch = () => {
     setInterval(timeNow, 1000)
 }
 
-consoleWatch();
+//consoleWatch();
+
+const fs = require('fs');
+
+function readFile() {
+  return new Promise((resolve, reject) => {
+    fs.readFile("a.txt","utf-8", function(err, data){
+      resolve(data);
+      //reject(data)
+    })
+  })
+}
+
+async function vachFile() {
+  let val  = await readFile();
+  console.log('val', val);
+}
+
+vachFile();
+console.log("After vach file");
+
+/* readFile()
+.then((data)=>{
+  console.log("data resolve", data);
+})
+.catch((err)=>{
+  console.log("data reject", err);
+
+}) */
